@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .field {
+      background-color: lightgreen;
+      border: 5px solid brown;
+      width: 1300px;
+      height: 500px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .bat {
+      height: 100px;
+      width: 300px;
+      position: relative;
+      left: 1000px;
+      top: 150px;
+      animation: shot 2s ease-in-out 1s infinite forwards;
+      animation-play-state: running;
+      transform: rotate(-40deg);
+      transform-origin: bottom left;
+    }
+
+    .ball {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-image: linear-gradient(pink, brown);
+      position: relative;
+      left: 1140px;
+      top: 150px;
+      z-index: 1;
+      animation: going 2s linear 0s infinite forwards;
+      animation-play-state: running;
+    }
+
+    .wall {
+      height: 450px;
+      width: 30px;
+      background-image: linear-gradient(lightblue, darkslategray);
+      position: fixed;
+      left: 190px;
+      top: 64px;
+    }
+
+    @keyframes shot {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      50% {
+        transform: rotate(-40%);
+      }
+
+      100% {
+        transform: rotate(0%);
+      }
+    }
+
+    @keyframes going {
+      0% {
+        left: 1140px;
+        top: 150px;
+      }
+
+      25% {
+        top: 50px;
+      }
+
+      50% {
+        top: 150px;
+        left: 200px;
+      }
+
+      75% {
+        top: 400px;
+      }
+
+      100% {
+        left: 1140px;
+        top: 150px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <section class="field">
+    <div class="wall"></div>
+    <div class="ball"></div>
+    <div class="bat"><img src="recourses/racket.png" alt=""></div>
+  </section>
+
+</body>
+
+</html>
